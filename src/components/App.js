@@ -1,16 +1,17 @@
-import './App.css';
-import Header from './layout/header/Header';
-import Main from './layout/main/Main';
-import Footer from './layout/footer/Footer';
+import React from 'react';
+import './App.css'
+import Header from './layout/header/Header'
+import Main from './layout/main/Main'
+import Footer from './layout/footer/Footer'
 
 function App() {
   return (
-    <div className='root-app'>
+    <React.Fragment>
       <Header />
       <Main />
       <Footer />
-    </div>
+    </React.Fragment>
   )
 }
 
-export default App;
+export default App
