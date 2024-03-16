@@ -3,7 +3,7 @@ import { NoteApi } from '../../../api/NoteApi'
 import './CardFormNote.css'
 
 class CardFormNote extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -28,7 +28,7 @@ class CardFormNote extends React.Component {
     }
   }
 
-  handleFocus (e) {
+  handleFocus(e) {
     let newErrors = this.state.errors
     newErrors[e.target.name] = null
     this.setState({errors: newErrors})
