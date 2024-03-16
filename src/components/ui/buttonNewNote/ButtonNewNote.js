@@ -4,12 +4,18 @@ import CardFormNote from '../cardFormNote/CardFormNote'
 
 import './ButtonNewNote.css'
 
-
 class ButtonNewNote extends React.Component {
-  dialogName = "new-note"
+  constructor(props) {
+    super(props)
+    this.dialogName = "new-note"
+  }
   
   openDialog() {
     document.getElementById(this.dialogName)?.showModal()
+  }
+  
+  handleSubmit () {
+    document.getElementById(this.dialogName)?.close()
   }
 
   render() {
@@ -18,7 +24,7 @@ class ButtonNewNote extends React.Component {
         <button type="button" onClick={() => this.openDialog()}>Добавить заметку</button>
   
         <Dialog name={this.dialogName}>
-          <CardFormNote />
+          <CardFormNote submitCallback={this.handleSubmit.bind(this)} />
         </Dialog>
       </div>
     )

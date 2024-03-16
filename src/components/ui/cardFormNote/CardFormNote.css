@@ -4,9 +4,14 @@
   flex-direction: column;
   padding: 20px;
   background-color: thistle;
+
 }
 
 .card-form-note textarea {
   margin-top: 10px;
 }
 
+.card-form-note .field-error {
+  font-size: 16px;
+  color: red;
+}
