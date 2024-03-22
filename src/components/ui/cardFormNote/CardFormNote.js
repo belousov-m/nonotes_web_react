@@ -1,14 +1,14 @@
 import React from 'react'
-import { NoteApi } from '../../../api/NoteApi'
 import './CardFormNote.css'
+import withStore from '../../../store/withStore'
 
 class CardFormNote extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      errors: {}
-    }
+    this.state = { errors: {}}
+
+    this.store = props.store
   }
 
   async handleSubmit(e) {
@@ -17,15 +17,19 @@ class CardFormNote extends React.Component {
     const form = e.target;
     const formData = new FormData(form)
     let note = {}
-
+    
     for (const [key, value] of formData) { note[key] = value }
-
-    try {
-      await NoteApi.create(note)
+    
+    const successCallback = () => {
+      form.reset()
       this.props.submitCallback()
-    } catch (error) {
+    }
+
+    const errorCallback = (error) => {
       this.setState({errors: error.response.data.errors})
     }
+
+    this.store.createNote(note, successCallback, errorCallback)
   }
 
   handleFocus(e) {
@@ -57,4 +61,4 @@ class CardFormNote extends React.Component {
   }
 }
 
-export default CardFormNote
+export default withStore(CardFormNote)

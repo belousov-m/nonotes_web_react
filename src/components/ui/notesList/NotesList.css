@@ -1,0 +1,9 @@
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px 0 0 -10px;
+}
+
+.notes-list .note-card {
+  margin: 10px 0 0 10px;
+}
