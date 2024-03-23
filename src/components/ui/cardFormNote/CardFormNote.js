@@ -46,15 +46,17 @@ class CardFormNote extends React.Component {
       <div className='card-form-note'>
         <form method="post" onSubmit={this.handleSubmit.bind(this)}>
           <div>
-            <input name="title" autoComplete="off" onFocus={(e) => this.handleFocus(e)} />
+            <input name="title" placeholder="Название" autoComplete="off" onFocus={(e) => this.handleFocus(e)} />
             {titleError}
 
-            <textarea name="description" rows="4" onFocus={(e) => this.handleFocus(e)} />
+            <textarea name="description" placeholder="Текст" rows="6" onFocus={(e) => this.handleFocus(e)} />
             {descriptionError}
           </div>
-
-          <button type="submit">Добавить</button>
-          <button type="reset">Очистить</button>
+          
+          <div className='card-form-note__actions'>
+            <button className="primary" type="submit">Добавить</button>
+            <button className="primary" type="reset">Очистить</button>
+          </div>
         </form>
       </div>
     )

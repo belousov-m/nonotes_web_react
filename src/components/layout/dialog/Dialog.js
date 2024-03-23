@@ -1,5 +1,6 @@
 import React from 'react'
 import './Dialog.css'
+import { GoX } from "react-icons/go";
 
 class Dialog extends React.Component {
   constructor (props) {
@@ -18,9 +19,9 @@ class Dialog extends React.Component {
           {this.props.children}
         </div>
 
-        <menu>
-          <button id="cancel" onClick={() => this.close()}>close</button>
-        </menu>
+        <div className="dialog-close-icon">
+          <GoX onClick={() => this.close()} />
+        </div>
       </dialog>
     )
   }

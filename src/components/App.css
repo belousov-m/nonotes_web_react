@@ -1,4 +1,20 @@
 html, body, #root{
   height: 100%;
   min-width: 100%;
+  font-family: cursive;
+}
+
+button.primary {
+  padding: 8px 22px;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: all .2s;
+}
+
+button.primary:hover {
+  cursor: pointer;
+  background-color: rgb(78, 130, 131);
 }
