@@ -1,4 +1,6 @@
 .note-card {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   background-color: thistle;
   border-radius: 8px;

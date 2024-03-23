@@ -28,13 +28,13 @@ export const NoteApi = {
     }
   },
   
-  edit: async function (id) {
-    const response = await api.request({
-      url: `/notes/${id}`,
-      method: 'PATCH'
-    })
-
-    return response
+  update: async function (id, note, successCallback) {
+    try {
+      await api.request({ url: `/notes/${id}`, method: 'PATCH', data: note })
+      successCallback()
+    } catch (error) {
+      console.error('Не удалось сохранить данные')
+    }
   },
   
   delete: async function (id, successCallback, errorCallback) {

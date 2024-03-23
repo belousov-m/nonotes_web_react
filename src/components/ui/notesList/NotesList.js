@@ -19,6 +19,7 @@ const NotesList = observer(
             return (
               <NoteCard
                 id={note.id}
+                key={note.id}
                 title={note.attributes.title}
                 description={note.attributes.description}
               />

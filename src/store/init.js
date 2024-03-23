@@ -21,13 +21,12 @@ class NoteStore {
     try {
       const { data } = await NoteApi.index()
       this.notes = data.data
-      console.log('data.data', this.notes)
     } catch (error) {
       console.error("Не удалось загрузить заметки")
     }
   }
 
-  createNote(note = {title: '', description: ''}, successCallback, errorCallback) {
+  createNote(note, successCallback, errorCallback) {
     const apiSuccessCallback = (note) => {
       this.notes.push(note)
       successCallback()
@@ -36,11 +35,15 @@ class NoteStore {
     NoteApi.create(note, apiSuccessCallback, errorCallback)
   }
 
-  updateNote(noteId, newNote) {
-    const noteIndexAtId = this.notes.findIndex((note) => note.id === noteId)
-    if (noteIndexAtId > -1 && newNote) {
-      this.notes[noteIndexAtId] = newNote
+  updateNote(noteId, key, value) {
+    const note = this.notes.find((note) => note.id === noteId)
+    note[key] = value
+    
+    const apiSuccessCallback = () => {
+      // action after success
     }
+
+    NoteApi.update(noteId, note, apiSuccessCallback)
   }
 
   deleteNote(noteId, successCallback, errorCallback) {
