@@ -1,5 +1,24 @@
 header {
   height: 60px;
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
   background-color: cadetblue;
+  font-family: sans-serif;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+header nav a + a {
+  margin-left: 10px;
 }

@@ -3,10 +3,6 @@
   width: inherit;
 }
 
-.notes-page .notes-list-container {
-  display: flex;
-}
-
 .notes-page .button-new-note-container {
   position: absolute;
   bottom: 30px;

@@ -2,7 +2,7 @@ import ButtonNewNote from '../../ui/buttonNewNote/ButtonNewNote'
 import NotesList from '../../ui/notesList/NotesList'
 import './Notes.css'
 
-function Main() {
+function Notes() {
   return (
     <div className='notes-page'>
       <div className='button-new-note-container'>
@@ -16,4 +16,4 @@ function Main() {
   )
 }
 
-export default Main
+export default Notes

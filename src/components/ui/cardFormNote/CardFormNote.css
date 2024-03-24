@@ -10,7 +10,7 @@
   width: 100%;
   box-sizing: border-box;
   border-style: none;
-  font-family: inherit;
+  font-family: cursive;
 }
 
 .card-form-note input:focus, textarea:focus {
