@@ -1,4 +1,5 @@
 import React from 'react'
+import TextareaAutosize from 'react-textarea-autosize'
 import './CardFormNote.css'
 import withStore from '../../../store/withStore'
 
@@ -49,7 +50,7 @@ class CardFormNote extends React.Component {
             <input name="title" placeholder="Название" autoComplete="off" onFocus={(e) => this.handleFocus(e)} />
             {titleError}
 
-            <textarea name="description" placeholder="Текст" rows="6" onFocus={(e) => this.handleFocus(e)} />
+            <TextareaAutosize name="description" minRows="10" maxRows="15" placeholder="Текст" onFocus={(e) => this.handleFocus(e)} />
             {descriptionError}
           </div>
           

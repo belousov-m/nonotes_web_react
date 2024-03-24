@@ -4,12 +4,18 @@ html, body, #root{
   font-family: cursive;
 }
 
+main {
+  height: calc(100% - 120px);
+  background-color: #f4ffff;
+  padding: 30px;
+}
+
 button.primary {
   padding: 8px 22px;
   background-color: cadetblue;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 18px;
   font-size: 18px;
   transition: all .2s;
 }

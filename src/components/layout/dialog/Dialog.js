@@ -19,9 +19,7 @@ class Dialog extends React.Component {
           {this.props.children}
         </div>
 
-        <div className="dialog-close-icon">
-          <GoX onClick={() => this.close()} />
-        </div>
+        <GoX className="dialog-close-icon" onClick={() => this.close()} />
       </dialog>
     )
   }

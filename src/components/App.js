@@ -1,8 +1,7 @@
 import React from 'react'
 import './App.css'
 import Header from './layout/header/Header'
-import Main from './layout/main/Main'
-import Footer from './layout/footer/Footer'
+import Notes from './pages/notes/Notes'
 
 import { Provider } from "mobx-react"
 import { noteStore } from "../store/init"
@@ -12,9 +11,10 @@ function App() {
     <React.Fragment>
       <Header />
       <Provider store={noteStore}>
-        <Main />
+        <main>
+          <Notes />
+        </main>
       </Provider>
-      <Footer />
     </React.Fragment>
   )
 }

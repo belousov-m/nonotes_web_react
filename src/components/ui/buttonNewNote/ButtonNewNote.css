@@ -1,0 +1,21 @@
+.button-new-note {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  transition: all .2s;
+}
+
+.button-new-note:hover {
+  cursor: pointer;
+  background-color: rgb(78, 130, 131);
+}
+
+.button-new-note .button-new-note__icon {
+  font-size: 36px;
+}

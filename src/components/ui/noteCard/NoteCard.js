@@ -1,7 +1,9 @@
 import React from 'react'
-import './NoteCard.css'
-import withStore from '../../../store/withStore'
 import debounce from 'debounce'
+import TextareaAutosize from 'react-textarea-autosize'
+import { GoTrash } from "react-icons/go";
+import withStore from '../../../store/withStore'
+import './NoteCard.css'
 
 class CardFormNote extends React.Component {
   constructor(props) {
@@ -23,23 +25,27 @@ class CardFormNote extends React.Component {
   }
 
   handleEditTitle(e) {
-    debounce(() => {
-      this.store.updateNote(this.props.id, 'title', e.target.value)
-    }, 200)
+    this.store.updateNote(this.props.id, 'title', e.target.value)
+    
+    // debounce(() => {
+    //   this.store.updateNote(this.props.id, 'title', e.target.value)
+    // }, 200)
   }
 
   handleEditDescription(e) {
-    debounce(() => {
-      this.store.updateNote(this.props.id, 'description', e.target.value)
-    }, 200)
+    this.store.updateNote(this.props.id, 'description', e.target.value)
+
+    // debounce(() => {
+    //   this.store.updateNote(this.props.id, 'description', e.target.value)
+    // }, 200)
   }
 
   render() {
     return (
       <div className='note-card'>
         <input onInput={this.handleEditTitle.bind(this)} defaultValue={this.props.title} />
-        <textarea rows="2" onInput={this.handleEditDescription.bind(this)} defaultValue={this.props.description} />
-        <button type="button" onClick={this.handleDelete.bind(this)}>Удалить</button>
+        <TextareaAutosize maxRows="10" onInput={this.handleEditDescription.bind(this)} defaultValue={this.props.description} />
+        <GoTrash className='note-card__delete' onClick={this.handleDelete.bind(this)} />
       </div>
     )
   }

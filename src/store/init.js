@@ -28,7 +28,7 @@ class NoteStore {
 
   createNote(note, successCallback, errorCallback) {
     const apiSuccessCallback = (note) => {
-      this.notes.push(note)
+      this.notes.unshift(note)
       successCallback()
     }
 

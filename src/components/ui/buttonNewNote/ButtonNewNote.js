@@ -1,6 +1,7 @@
 import React from 'react'
 import Dialog from '../../layout/dialog/Dialog'
 import CardFormNote from '../cardFormNote/CardFormNote'
+import { GoPlus } from "react-icons/go";
 
 import './ButtonNewNote.css'
 
@@ -20,8 +21,10 @@ class ButtonNewNote extends React.Component {
 
   render() {
     return (
-      <div className="button-new-note">
-        <button type="button" onClick={() => this.openDialog()}>Добавить заметку</button>
+      <div>
+        <button className="button-new-note" type="button" onClick={() => this.openDialog()}>
+          <GoPlus className="button-new-note__icon"/>
+        </button>
   
         <Dialog name={this.dialogName}>
           <CardFormNote submitCallback={this.handleSubmit.bind(this)} />

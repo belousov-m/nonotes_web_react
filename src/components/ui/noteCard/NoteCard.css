@@ -1,8 +1,50 @@
 .note-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: thistle;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0px 4px 17px -6px rgba(0,0,0,0.1);
+}
+
+.note-card:hover .note-card__delete {
+  display: block;
+}
+
+.note-card input, textarea {
+  box-sizing: border-box;
+  border-style: none;
+  font-family: inherit;
+}
+
+.note-card input:focus, textarea:focus {
+  border-style: none;
+  outline: none;
+}
+
+.note-card input {
+  width: 80%;
+  font-size: 20px;
+  resize: none;
+}
+
+.note-card textarea {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  resize: none;
+}
+
+.note-card .note-card__delete {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+}
+
+.note-card .note-card__delete:hover {
+  cursor: pointer;
+  color: rgb(46, 46, 46);
 }
